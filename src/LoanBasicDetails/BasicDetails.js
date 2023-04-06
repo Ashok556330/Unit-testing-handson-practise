@@ -156,7 +156,7 @@ export class BasicDetails extends LocalizeMixin(LitElement) {
                 { min: 10000 },
                 {
                   getMessage: () =>
-                    'Should enter an amount greater than ten thousand ',
+                    'Should enter an amount greater than ten thousand',
                 }
               ),
               new MaxNumber(
