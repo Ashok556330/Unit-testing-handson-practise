@@ -12,31 +12,29 @@ describe('Basic details', () => {
     expect(myspy.calledOnce).to.be.true;
   })
 
-  it('Call the capture details page', async () => {
+  it('Should call the captureDetails function', async () => {
     const el = await fixture(html `<basic-details></basic-details>`);
     const myspy = Sinon.spy(el, '_captureDetails');
     el._captureDetails();
     expect(myspy.calledOnce).to.be.true;
   })
 
-  it('should call num to word function', async () => {
+  it('should call numToWord function', async () => {
     const el = await fixture(html `<basic-details></basic-details>`);
     const myspy = Sinon.spy(el, '_numToWord');
     el._numToWord();
     expect(myspy.calledOnce).to.be.true;
   })
 
-  it('should contain a valid input', async () => {
+  it('should contain a valid Loan input amount', async () => {
     const el = await fixture(html `<basic-details></basic-details>`);
-    console.log(el.shadowRoot.querySelector('lion-input-amount').length);
-    // expect(el.querySelector('lion-input-amount').length).to.equal(['1']);
+    expect(el.shadowRoot.querySelector('lion-input-amount')).to.exist;
   })
 
-  it('should contain a valid input', async () => {
+  it('should contain a valid text name', async () => {
     const el = await fixture(html `<lion-input-amount label="${localize.msg('change-language:Amount')}"></lion-input-amount>`);
-    expect (el.label).to.equal('');
+    expect (el.type).to.equal('text');
   })
-
   // Write test cases inside this block
   // refer basic-details.js files
 });

@@ -6,7 +6,7 @@ import Sinon from 'sinon';
 
 describe('Success screen ', () => {
   // Write test cases inside this block
-  it('works', async () => {
+  it('Should call toHome function in succes case', async () => {
     const el = await fixture(html `<loan-success></loan-success>`);
     const myspy = Sinon.spy(el, '_toHome');
     myspy();
@@ -14,7 +14,7 @@ describe('Success screen ', () => {
   })
 });
 
-describe('error screen', () => {
+describe('Should call toHome function in error screen', () => {
   it('works', async () => {
     const el = await fixture(html `<loan-error></loan-error>`);
     const myspy = Sinon.spy(el, '_toHome');
